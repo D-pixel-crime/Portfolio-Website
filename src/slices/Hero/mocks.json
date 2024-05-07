@@ -12,6 +12,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "walk",
 				"type": "Text"
+			},
+			"intro_tag": {
+				"__TYPE__": "FieldContent",
+				"value": "fewer",
+				"type": "Text"
 			}
 		},
 		"items": []

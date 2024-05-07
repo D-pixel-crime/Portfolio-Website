@@ -25,6 +25,13 @@
             "label": "Last Name",
             "placeholder": ""
           }
+        },
+        "intro_tag": {
+          "type": "Text",
+          "config": {
+            "label": "Intro Tag",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
