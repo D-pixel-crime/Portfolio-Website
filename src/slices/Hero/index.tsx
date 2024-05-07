@@ -1,5 +1,6 @@
 "use client";
 
+import CommonBounded from "@/components/CommonBounded";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
@@ -40,7 +41,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           opacity: 1,
           rotate: 0,
           ease: "elastic.out(1.2,0.3)",
-          duration: 1.5,
+          duration: 1.25,
           transformOrigin: "left top",
           stagger: {
             each: 0.1,
@@ -67,7 +68,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
   }, []);
 
   return (
-    <section
+    <CommonBounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       ref={component}
@@ -75,17 +76,17 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh]">
         <div className="cols-start-1 md:row-start-1">
           <h1
-            className="font-extrabold leading-none text-[clamp(3rem,12vw,20rem)]"
+            className="font-extrabold leading-none text-[clamp(3rem,10vw,20rem)] text-slate-200"
             aria-label={slice.primary.name!}
           >
             <span className="block">{splitEachLetter(slice.primary.name)}</span>
           </h1>
-          <span className="mt-4 intro-tag block bg-gradient-to-br from-violet-200 to-50% via-purple-500 to-violet-300 bg-clip-text text-2xl lg:text-4xl font-bold uppercase text-transparent opacity-0">
+          <span className="ml-2 mt-4 intro-tag block bg-gradient-to-br from-violet-200 to-50% via-purple-500 to-violet-300 bg-clip-text text-2xl lg:text-4xl font-bold uppercase text-transparent opacity-0">
             {slice.primary.intro_tag}
           </span>
         </div>
       </div>
-    </section>
+    </CommonBounded>
   );
 };
 
