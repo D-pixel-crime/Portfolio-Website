@@ -8,6 +8,7 @@
 
 #environmet-variables
 /.env
+/.vscode
 
 # testing
 /coverage
