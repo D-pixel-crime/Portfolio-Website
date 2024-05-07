@@ -3,19 +3,14 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"first_name": {
-				"__TYPE__": "FieldContent",
-				"value": "stand",
-				"type": "Text"
-			},
-			"last_name": {
-				"__TYPE__": "FieldContent",
-				"value": "walk",
-				"type": "Text"
-			},
 			"intro_tag": {
 				"__TYPE__": "FieldContent",
-				"value": "fewer",
+				"value": "perhaps",
+				"type": "Text"
+			},
+			"name": {
+				"__TYPE__": "FieldContent",
+				"value": "visit",
 				"type": "Text"
 			}
 		},
