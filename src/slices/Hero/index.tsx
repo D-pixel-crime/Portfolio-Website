@@ -75,7 +75,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh] mt-5">
         <Shapes />
         <div className="cols-start-2 md:row-start-1">
-          <span className="block ml-3 text-2xl text-slate-300">
+          <span className="block lg:ml-3 max-lg:ml-1 text-2xl max-sm:text-lg text-slate-300">
             {slice.primary.greeting}
           </span>
           <h1

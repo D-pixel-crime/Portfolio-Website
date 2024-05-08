@@ -21,11 +21,12 @@ export const Shapes = () => {
            */}
           <Geometries />
           <ContactShadows
-            position={[0, -3.5, 0]}
-            opacity={0.65}
+            position={[0, -5, 0]}
+            opacity={0.2}
             scale={40}
-            blur={1}
+            blur={1.5}
             far={9}
+            color={"skyblue"}
           />
           <Environment preset="studio" />
         </Suspense>
@@ -57,7 +58,7 @@ const Geometries = () => {
       geometry: new THREE.CylinderGeometry(0.45, 0.45, 2, 32),
     },
     {
-      position: [-1.25, -1.2, 0.5],
+      position: [-1.5, -1.2, 0.5],
       r: 0.7,
       geometry: new THREE.CapsuleGeometry(0.5, 0.7, 4, 98),
     },
@@ -125,11 +126,13 @@ const Geometry = ({ r, position, geometry, materials }) => {
 
   const startingMaterial = getRandomMaterial();
 
+  const shapeClickSound = new Audio("/sounds/shape_click.ogg");
+
   const handleClick = (e) => {
     const mesh = e.object;
-    // mesh.material.color.setHex(Math.random() * 0xffffff);
-    // mesh.material.roughness = Math.random();
-    // mesh.material.metalness = Math.random();
+
+    shapeClickSound.play();
+
     gsap.to(mesh.rotation, {
       x: `+=${gsap.utils.random(0, 2)}`,
       y: `+=${gsap.utils.random(0, 2)}`,
