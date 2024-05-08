@@ -8,7 +8,7 @@ import { gsap } from "gsap";
 
 export const Shapes = () => {
   return (
-    <div className="row-span-1 row-start-1 -mt-9 aspect-square md:col-span-1 md:col-start-2 md:mt-0">
+    <div className="row-span-1 row-start-1 -mt-9 aspect-square md:col-span-1 md:col-start-1 md:mt-0">
       <Canvas
         className="z-0"
         shadows
@@ -44,7 +44,7 @@ const Geometries = () => {
     {
       position: [1, 2, 1],
       r: 0.7,
-      geometry: new THREE.TorusKnotGeometry(0.5, 0.2, 15, 16),
+      geometry: new THREE.DodecahedronGeometry(1),
     },
     {
       position: [1.5, -1.2, -1],
@@ -54,40 +54,49 @@ const Geometries = () => {
     {
       position: [-1, 1.2, 1],
       r: 0.7,
-      geometry: new THREE.CylinderGeometry(0.45, 0.45, 1, 32),
+      geometry: new THREE.CylinderGeometry(0.45, 0.45, 2, 32),
     },
     {
       position: [-1.25, -1.2, 0.5],
       r: 0.7,
-      geometry: new THREE.CapsuleGeometry(0.5, 0.7, 4, 8),
+      geometry: new THREE.CapsuleGeometry(0.5, 0.7, 4, 98),
     },
   ];
 
   const materials = [
-    new THREE.MeshNormalMaterial(),
     new THREE.MeshStandardMaterial({
-      color: Math.random() * 0xffffff,
+      color: "#BE51EC",
+      roughness: Math.random(),
+      metalness: Math.random(),
+    }),
+    new THREE.MeshStandardMaterial({
+      color: "#7AF72B",
+      roughness: Math.random(),
+      metalness: Math.random(),
+    }),
+    new THREE.MeshStandardMaterial({
+      color: "#FF2E06",
       roughness: Math.random(),
       metalness: Math.random(),
     }),
     new THREE.MeshNormalMaterial(),
     new THREE.MeshStandardMaterial({
-      color: Math.random() * 0xffffff,
+      color: "#0BD4FD",
       roughness: Math.random(),
       metalness: Math.random(),
     }),
     new THREE.MeshStandardMaterial({
-      color: Math.random() * 0xffffff,
+      color: "#DFB6D1",
       roughness: Math.random(),
       metalness: Math.random(),
     }),
     new THREE.MeshStandardMaterial({
-      color: Math.random() * 0xffffff,
+      color: "#f9d62e",
       roughness: Math.random(),
       metalness: Math.random(),
     }),
     new THREE.MeshStandardMaterial({
-      color: Math.random() * 0xffffff,
+      color: "#ff00a9",
       roughness: Math.random(),
       metalness: Math.random(),
     }),

@@ -72,9 +72,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       ref={component}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh]">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh] mt-5">
         <Shapes />
-        <div className="cols-start-1 md:row-start-1">
+        <div className="cols-start-2 md:row-start-1">
+          <span className="block ml-3 text-2xl text-slate-300">
+            {slice.primary.greeting}
+          </span>
           <h1
             className="font-extrabold leading-none text-[clamp(3rem,10vw,20rem)] text-slate-200"
             aria-label={slice.primary.name!}

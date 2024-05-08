@@ -94,6 +94,16 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   intro_tag: prismic.KeyTextField;
+
+  /**
+   * Greeting field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.greeting
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  greeting: prismic.KeyTextField;
 }
 
 /**

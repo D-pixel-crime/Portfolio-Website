@@ -12,6 +12,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "visit",
 				"type": "Text"
+			},
+			"greeting": {
+				"__TYPE__": "FieldContent",
+				"value": "aid",
+				"type": "Text"
 			}
 		},
 		"items": []

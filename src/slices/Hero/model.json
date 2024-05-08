@@ -25,6 +25,13 @@
             "label": "Intro Tag",
             "placeholder": ""
           }
+        },
+        "greeting": {
+          "type": "Text",
+          "config": {
+            "label": "Greeting",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
