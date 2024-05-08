@@ -43,7 +43,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           rotate: 0,
           ease: "elastic.out(1.2,0.3)",
           duration: 1.25,
-          transformOrigin: "left top",
+          transformOrigin: "top right",
           stagger: {
             each: 0.1,
             from: "random",

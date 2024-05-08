@@ -3,7 +3,7 @@
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Float, Environment } from "@react-three/drei";
-import { Suspense, useState, useRef } from "react";
+import { Suspense, useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
 export const Shapes = () => {
@@ -41,13 +41,55 @@ const Geometries = () => {
       r: 0.3,
       geometry: new THREE.IcosahedronGeometry(3),
     },
+    {
+      position: [1, 2, 1],
+      r: 0.7,
+      geometry: new THREE.TorusKnotGeometry(0.5, 0.2, 15, 16),
+    },
+    {
+      position: [1.5, -1.2, -1],
+      r: 0.7,
+      geometry: new THREE.OctahedronGeometry(1),
+    },
+    {
+      position: [-1, 1.2, 1],
+      r: 0.7,
+      geometry: new THREE.CylinderGeometry(0.45, 0.45, 1, 32),
+    },
+    {
+      position: [-1.25, -1.2, 0.5],
+      r: 0.7,
+      geometry: new THREE.CapsuleGeometry(0.5, 0.7, 4, 8),
+    },
   ];
 
   const materials = [
+    new THREE.MeshNormalMaterial(),
     new THREE.MeshStandardMaterial({
-      color: "skyblue",
-      roughness: 0,
-      metalness: 1,
+      color: Math.random() * 0xffffff,
+      roughness: Math.random(),
+      metalness: Math.random(),
+    }),
+    new THREE.MeshNormalMaterial(),
+    new THREE.MeshStandardMaterial({
+      color: Math.random() * 0xffffff,
+      roughness: Math.random(),
+      metalness: Math.random(),
+    }),
+    new THREE.MeshStandardMaterial({
+      color: Math.random() * 0xffffff,
+      roughness: Math.random(),
+      metalness: Math.random(),
+    }),
+    new THREE.MeshStandardMaterial({
+      color: Math.random() * 0xffffff,
+      roughness: Math.random(),
+      metalness: Math.random(),
+    }),
+    new THREE.MeshStandardMaterial({
+      color: Math.random() * 0xffffff,
+      roughness: Math.random(),
+      metalness: Math.random(),
     }),
   ];
 
@@ -66,7 +108,7 @@ const Geometries = () => {
 
 const Geometry = ({ r, position, geometry, materials }) => {
   const meshRef = useRef();
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const getRandomMaterial = () => {
     return gsap.utils.random(materials);
@@ -76,7 +118,9 @@ const Geometry = ({ r, position, geometry, materials }) => {
 
   const handleClick = (e) => {
     const mesh = e.object;
-
+    // mesh.material.color.setHex(Math.random() * 0xffffff);
+    // mesh.material.roughness = Math.random();
+    // mesh.material.metalness = Math.random();
     gsap.to(mesh.rotation, {
       x: `+=${gsap.utils.random(0, 2)}`,
       y: `+=${gsap.utils.random(0, 2)}`,
@@ -96,6 +140,21 @@ const Geometry = ({ r, position, geometry, materials }) => {
   const handlePointerOut = () => {
     document.body.style.cursor = "default";
   };
+
+  useEffect(() => {
+    let context = gsap.context(() => {
+      setVisible(true);
+      gsap.from(meshRef.current.scale, {
+        x: 0,
+        y: 0,
+        z: 0,
+        duration: 1,
+        ease: "back",
+        delay: 0.5,
+      });
+    });
+    return () => context.revert();
+  }, []);
 
   return (
     <group ref={meshRef} position={position}>
