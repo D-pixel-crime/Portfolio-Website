@@ -3,8 +3,9 @@
 import CommonBounded from "@/components/CommonBounded";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
+import { Shapes } from "./Shapes";
 
 /**
  * Props for `Hero`.
@@ -49,9 +50,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           },
         }
       );
-
-      const t2 = gsap.timeline();
-      t2.fromTo(
+      t1.fromTo(
         ".intro-tag",
         { opacity: 0, y: 20, scale: 1.2 },
         {
@@ -60,9 +59,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           ease: "elastic.out(1.3,0.2)",
           y: 0,
           scale: 1,
+          delay: -1,
         }
       );
-      t2.delay(1);
     }, component);
     return () => context.revert();
   }, []);
@@ -74,6 +73,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       ref={component}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh]">
+        <Shapes />
         <div className="cols-start-1 md:row-start-1">
           <h1
             className="font-extrabold leading-none text-[clamp(3rem,10vw,20rem)] text-slate-200"
