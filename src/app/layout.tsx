@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lexend_Deca } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const lexendDeca = Lexend_Deca({ weight: "400", subsets: ["latin"] });
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-slate-900 text-white">
-      <body className={lexendDeca.className}>{children}</body>
+      <body className={lexendDeca.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
