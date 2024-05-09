@@ -24,16 +24,17 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         <Heading
           as="h2"
           size="lg"
-          className="md:col-start-2 max-md:row-start-2 md:row-start-1 md:row-end-2"
+          className="flex-center md:col-start-2 max-md:row-start-2 md:row-start-1 md:row-end-2"
         >
           {slice.primary.heading}
         </Heading>
-        <div className="prose prose-xl prose-slate prose-invert md:col-start-2 text-justify">
+        <div className="flex-center flex-col prose prose-xl prose-slate prose-invert md:col-start-2 text-justify">
           <PrismicRichText field={slice.primary.description} />
           <Button
             link={slice.primary.button_link}
             label={slice.primary.button_text}
             showIcon
+            buttonColor="bg-violet-400"
           />
         </div>
         <Avatar

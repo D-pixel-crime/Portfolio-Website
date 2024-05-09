@@ -8,9 +8,16 @@ interface ButtonProps {
   label: KeyTextField;
   className?: string;
   showIcon?: boolean;
+  buttonColor: string;
 }
 
-const Button = ({ link, label, showIcon, className }: ButtonProps) => {
+const Button = ({
+  link,
+  label,
+  showIcon,
+  className,
+  buttonColor,
+}: ButtonProps) => {
   return (
     <PrismicNextLink
       field={link}
@@ -19,7 +26,12 @@ const Button = ({ link, label, showIcon, className }: ButtonProps) => {
         className
       )}
     >
-      <span className="absolute inset-0 z-0 h-full translate-x-[-90%] translate-y-[80%] bg-yellow-300 transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"></span>
+      <span
+        className={clsx(
+          "absolute inset-0 z-0 h-full translate-x-[-90%] translate-y-[80%] transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0",
+          buttonColor
+        )}
+      ></span>
 
       <span className="relative text-slate-900 flex-center gap-2">
         {label} {showIcon && <ExternalLinkIcon className="inline-block" />}

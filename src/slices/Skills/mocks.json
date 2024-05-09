@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "father",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"skill",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "coach",
+							"type": "Text"
+						}
+					],
+					[
+						"relatedcolor",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "#d8acf3",
+							"type": "Color"
+						}
+					]
+				]
+			}
+		]
+	}
+]

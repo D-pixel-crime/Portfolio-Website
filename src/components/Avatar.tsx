@@ -5,7 +5,6 @@ import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import { rotate } from "three/examples/jsm/nodes/Nodes.js";
 
 interface PropsAvatar {
   image: ImageField;
@@ -29,7 +28,7 @@ const Avatar = ({ image, className }: PropsAvatar) => {
           {
             opacity: 1,
             scale: 0.9,
-            duration: 1.3,
+            duration: 1.5,
             rotate: 2,
             ease: "power3.in",
           }
@@ -53,7 +52,6 @@ const Avatar = ({ image, className }: PropsAvatar) => {
           field={image}
           className="avatar-image object-fill w-fit h-fit"
         />
-        <div className="highlight absolute inset-0 hidden w-fit scale-110 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block"></div>
       </div>
     </div>
   );
