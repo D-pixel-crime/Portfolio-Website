@@ -52,11 +52,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       );
       t1.fromTo(
         ".intro-tag",
-        { opacity: 0, y: 20, scale: 1.2 },
+        { opacity: 0, y: 20, scale: 1.35 },
         {
           opacity: 1,
-          duration: 1.5,
-          ease: "elastic.out(1.3,0.2)",
+          duration: 1.25,
+          ease: "bounce.out",
           y: 0,
           scale: 1,
           delay: -1,

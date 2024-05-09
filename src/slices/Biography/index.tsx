@@ -1,3 +1,4 @@
+import Avatar from "@/components/Avatar";
 import Button from "@/components/Button";
 import CommonBounded from "@/components/CommonBounded";
 import Heading from "@/components/Heading";
@@ -20,10 +21,14 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div className="grid gap-x-14 gap-y-6 md:grid-cols-[1fr,2fr]">
-        <Heading as="h2" size="xl" className="col-start-2">
+        <Heading
+          as="h2"
+          size="lg"
+          className="md:col-start-2 max-md:row-start-2 md:row-start-1 md:row-end-2"
+        >
           {slice.primary.heading}
         </Heading>
-        <div className="prose prose-xl prose-slate prose-invert col-start-2 text-justify">
+        <div className="prose prose-xl prose-slate prose-invert md:col-start-2 text-justify">
           <PrismicRichText field={slice.primary.description} />
           <Button
             link={slice.primary.button_link}
@@ -31,9 +36,9 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
             showIcon
           />
         </div>
-        <PrismicNextImage
-          field={slice.primary.avatar}
-          className="mt-10 rounded-xl col-start-1 row-start-1 md:col-start-1 md:row-end-3"
+        <Avatar
+          image={slice.primary.avatar}
+          className="mt-10 rounded-xl row-start-1 md:col-start-1 md:row-end-3"
         />
       </div>
     </CommonBounded>
