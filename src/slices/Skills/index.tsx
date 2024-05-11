@@ -8,6 +8,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { GitCommitHorizontal, GitCompareArrows } from "lucide-react";
 import React, { useEffect, useRef } from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
         scrollTrigger: {
           start: "top bottom",
           end: "bottom top",
-          scrub: 5,
+          scrub: 7,
         },
       });
 
@@ -67,7 +68,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
           {slice.primary.heading}
         </Heading>
       </CommonBounded>
-      {slice.items.map(({ skill, relatedcolor }, index) => (
+      {slice.items.map(({ skill, relatedcolor, icon_string }, index) => (
         <div
           key={index}
           aria-label={skill!}
@@ -84,7 +85,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
                 {skill}
               </span>
               <span className="flex-center">
-                <GitCompareArrows />
+                <Icon icon={icon_string!} className="size-[2rem]" />
               </span>
             </React.Fragment>
           ))}

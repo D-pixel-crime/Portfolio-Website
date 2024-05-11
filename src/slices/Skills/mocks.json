@@ -28,6 +28,14 @@
 							"value": "#d8acf3",
 							"type": "Color"
 						}
+					],
+					[
+						"icon_string",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "property",
+							"type": "Text"
+						}
 					]
 				]
 			}

@@ -548,6 +548,16 @@ export interface SkillsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#color
    */
   relatedcolor: prismic.ColorField;
+
+  /**
+   * Icon String field in *Skills → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.items[].icon_string
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  icon_string: prismic.KeyTextField;
 }
 
 /**

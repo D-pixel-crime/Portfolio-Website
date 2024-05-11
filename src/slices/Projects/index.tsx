@@ -1,5 +1,6 @@
 import CommonBounded from "@/components/CommonBounded";
 import Heading from "@/components/Heading";
+import ProjectList from "@/components/ProjectList";
 import { Content } from "@prismicio/client";
 import {
   PrismicRichText,
@@ -27,6 +28,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
       <div className="prose prose-xl prose-invert mb-10">
         <PrismicRichText field={slice.primary.description} />
       </div>
+      <ProjectList />
     </CommonBounded>
   );
 };
