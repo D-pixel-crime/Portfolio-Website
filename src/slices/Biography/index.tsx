@@ -39,7 +39,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
         </div>
         <Avatar
           image={slice.primary.avatar}
-          className="mt-10 rounded-xl row-start-1 md:col-start-1 md:row-end-3"
+          className="md:mt-20 rounded-xl row-start-1 md:col-start-1 md:row-end-3"
         />
       </div>
     </CommonBounded>

@@ -45,12 +45,13 @@ const Avatar = ({ image, className }: PropsAvatar) => {
   return (
     <div
       ref={avatarComponent}
-      className={clsx("relative h-fit w-fit", className)}
+      className={clsx("relative flex-center h-fit w-fit", className)}
     >
       <div className="avatar overflow-hidden rounded-3xl border-2 border-slate-700 opacity-0">
         <PrismicNextImage
           field={image}
-          className="avatar-image object-fill w-fit h-fit"
+          alt={""}
+          className="avatar-image object-fill h-[27rem] w-80"
         />
       </div>
     </div>
