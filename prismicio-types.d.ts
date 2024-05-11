@@ -440,16 +440,6 @@ export interface ProjectsSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * Content Type field in *Projects → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: projects.primary.content_type
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  content_type: prismic.SelectField<"Project" | "Blog">;
-
-  /**
    * Description field in *Projects → Primary*
    *
    * - **Field Type**: Rich Text
@@ -481,6 +471,41 @@ export interface ProjectsSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *Projects → Items*
+ */
+export interface ProjectsSliceDefaultItem {
+  /**
+   * Project Title field in *Projects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].project_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  project_title: prismic.KeyTextField;
+
+  /**
+   * Project Description field in *Projects → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].project_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  project_description: prismic.RichTextField;
+
+  /**
+   * Project Link field in *Projects → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].project_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.LinkField;
+}
+
+/**
  * Default variation for Projects Slice
  *
  * - **API ID**: `default`
@@ -490,7 +515,7 @@ export interface ProjectsSliceDefaultPrimary {
 export type ProjectsSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<ProjectsSliceDefaultPrimary>,
-  never
+  Simplify<ProjectsSliceDefaultItem>
 >;
 
 /**
@@ -617,6 +642,7 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       ProjectsSlice,
       ProjectsSliceDefaultPrimary,
+      ProjectsSliceDefaultItem,
       ProjectsSliceVariation,
       ProjectsSliceDefault,
       SkillsSlice,

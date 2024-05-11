@@ -8,11 +8,6 @@
 				"value": "typical",
 				"type": "Text"
 			},
-			"content_type": {
-				"__TYPE__": "FieldContent",
-				"value": "Blog",
-				"type": "Select"
-			},
 			"description": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -30,7 +25,6 @@
 				"type": "Text"
 			},
 			"fallback_item_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
@@ -48,9 +42,50 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"project_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "flow",
+							"type": "Text"
+						}
+					],
+					[
+						"project_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"project_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Lorem id Lorem nostrud consectetur voluptate enim ut. Ad culpa qui consequat veniam incididunt voluptate ex ad in quis consequat in."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

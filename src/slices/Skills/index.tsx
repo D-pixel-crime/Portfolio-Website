@@ -63,7 +63,7 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
       ref={skillComponent}
       className="overflow-hidden"
     >
-      <CommonBounded as="div" className="mb-2  md:mb-6 mt-5">
+      <CommonBounded as="div">
         <Heading size="lg" as="h2">
           {slice.primary.heading}
         </Heading>
@@ -72,12 +72,12 @@ const Skills = ({ slice }: SkillsProps): JSX.Element => {
         <div
           key={index}
           aria-label={skill!}
-          className="skill-row flex-center gap-4 my-5 text-slate-600"
+          className="skill-row flex-center gap-4 mb-5 text-slate-600"
         >
           {Array.from({ length: 15 }, (_, index) => (
             <React.Fragment key={index}>
               <span
-                className="individual-skill text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tighter"
+                className="individual-skill text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter"
                 style={{
                   color: index === 7 && relatedcolor ? relatedcolor : "inherit",
                 }}
