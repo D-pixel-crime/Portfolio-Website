@@ -48,31 +48,32 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="min-[770px]:grid min-[770px]:grid-cols-[2fr,1fr] items-center mb-20">
-        <div className="col-start-1">
-          <Heading size="xl" className="mb-8">
-            {slice.primary.heading}
-          </Heading>
-          <div className="prose prose-xl prose-invert mb-10">
-            <PrismicRichText field={slice.primary.description} />
-          </div>
+      <div className="min-[770px]:flex min-[770px]:flex-row min-[770px]:justify-between items-center mb-20">
+        <Heading size="xl" className="mb-8">
+          {slice.primary.heading}
+        </Heading>
+        <div className="prose prose-xl prose-invert mb-10">
+          <PrismicRichText field={slice.primary.description} />
         </div>
-        <PrismicImage
-          field={slice.primary.fallback_item_image}
-          alt=""
-          className="col-start-2 rounded-xl opacity-50"
-        />
       </div>
       <div className="overflow-hidden hover:overflow-visible">
         {slice.items.map(
-          ({ project_title, project_description, project_link }, index) => {
+          (
+            {
+              project_title,
+              project_description,
+              project_link,
+              project_screenshot,
+            },
+            index
+          ) => {
             return (
               <div
                 className="each-project border-y border-slate-600 opacity-0"
                 ref={eachProjectRef}
                 key={index}
               >
-                <div className="flex flex-row max-sm:flex-col max-sm:gap-4 items-center justify-between py-7 px-2 hover:bg-slate-800 hover:scale-105 transition">
+                <div className="flex flex-row max-sm:flex-col max-sm:gap-4 items-center justify-between py-7 px-2 hover:bg-slate-800 hover:scale-105 transition hover:cursor-pointer">
                   <div className="flex flex-col gap-3 max-sm:items-center">
                     <Heading size="sm">{project_title}</Heading>
                     <div className="prose prose-lg prose-invert text-slate-400 max-sm:text-justify">

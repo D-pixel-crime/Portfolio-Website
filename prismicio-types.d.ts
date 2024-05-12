@@ -698,6 +698,16 @@ export interface ProjectsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   project_link: prismic.LinkField;
+
+  /**
+   * Project Screenshot field in *Projects → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].project_screenshot
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  project_screenshot: prismic.ImageField<never>;
 }
 
 /**

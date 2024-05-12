@@ -68,6 +68,14 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "project_screenshot": {
+          "type": "Image",
+          "config": {
+            "label": "Project Screenshot",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       }
     }
