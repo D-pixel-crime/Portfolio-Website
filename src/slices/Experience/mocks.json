@@ -1,0 +1,52 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "receive",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"role",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "cave",
+							"type": "Text"
+						}
+					],
+					[
+						"company",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "block",
+							"type": "Text"
+						}
+					],
+					[
+						"duration",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "driver",
+							"type": "Text"
+						}
+					],
+					[
+						"location",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "road",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

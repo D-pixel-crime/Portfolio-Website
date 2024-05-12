@@ -31,12 +31,11 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
         {
           opacity: 0,
           x: index % 2 === 0 ? 200 : -200,
-          rotate: index % 2 === 0 ? 10 : -10,
         },
         {
+          delay: 1,
           opacity: 1,
           x: 0,
-          rotate: 0,
           duration: 2,
           ease: "power3.inOut",
         }

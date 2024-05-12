@@ -1,0 +1,55 @@
+{
+  "id": "experience",
+  "type": "SharedSlice",
+  "name": "Experience",
+  "description": "Experience",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "role": {
+          "type": "Text",
+          "config": {
+            "label": "Role",
+            "placeholder": ""
+          }
+        },
+        "company": {
+          "type": "Text",
+          "config": {
+            "label": "Company",
+            "placeholder": ""
+          }
+        },
+        "duration": {
+          "type": "Text",
+          "config": {
+            "label": "Duration",
+            "placeholder": ""
+          }
+        },
+        "location": {
+          "type": "Text",
+          "config": {
+            "label": "Location",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

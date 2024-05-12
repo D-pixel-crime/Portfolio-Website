@@ -6,7 +6,6 @@ import CommonBounded from "@/components/CommonBounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { GitCommitHorizontal, GitCompareArrows } from "lucide-react";
 import React, { useEffect, useRef } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
