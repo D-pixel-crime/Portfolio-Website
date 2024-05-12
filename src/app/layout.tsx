@@ -20,7 +20,6 @@ export default function RootLayout({
       <body className={lexendDeca.className}>
         <Header />
         {children}
-        <div className="h-[500vh]"></div>
       </body>
     </html>
   );

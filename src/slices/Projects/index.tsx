@@ -33,7 +33,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
           x: index % 2 === 0 ? 200 : -200,
         },
         {
-          delay: 1,
+          delay: 0.5,
           opacity: 1,
           x: 0,
           duration: 2,
