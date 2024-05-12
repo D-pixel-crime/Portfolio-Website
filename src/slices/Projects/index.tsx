@@ -25,16 +25,18 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
   const eachProjectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.utils.toArray(".each-project").forEach((project, index) => {
+    gsap.utils.toArray(".each-project").forEach((project: any, index) => {
       gsap.fromTo(
         project,
         {
           opacity: 0,
           x: index % 2 === 0 ? 200 : -200,
+          rotate: index % 2 === 0 ? 10 : -10,
         },
         {
           opacity: 1,
           x: 0,
+          rotate: 0,
           duration: 2,
           ease: "power3.inOut",
         }
@@ -47,7 +49,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid grid-cols-[2fr,1fr] items-center mb-20">
+      <div className="min-[770px]:grid min-[770px]:grid-cols-[2fr,1fr] items-center mb-20">
         <div className="col-start-1">
           <Heading size="xl" className="mb-8">
             {slice.primary.heading}
@@ -71,10 +73,10 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
                 ref={eachProjectRef}
                 key={index}
               >
-                <div className="flex flex-row items-center justify-between py-7 px-2 hover:bg-slate-800 hover:scale-105 transition">
-                  <div className="flex flex-col gap-3">
+                <div className="flex flex-row max-sm:flex-col max-sm:gap-4 items-center justify-between py-7 px-2 hover:bg-slate-800 hover:scale-105 transition">
+                  <div className="flex flex-col gap-3 max-sm:items-center">
                     <Heading size="sm">{project_title}</Heading>
-                    <div className="prose prose-lg prose-invert text-slate-400">
+                    <div className="prose prose-lg prose-invert text-slate-400 max-sm:text-justify">
                       <PrismicRichText field={project_description} />
                     </div>
                   </div>

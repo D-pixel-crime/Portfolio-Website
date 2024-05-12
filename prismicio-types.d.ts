@@ -212,7 +212,11 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = ProjectsSlice | SkillsSlice | BiographySlice;
+type PageDocumentDataSlicesSlice =
+  | EducationSlice
+  | ProjectsSlice
+  | SkillsSlice
+  | BiographySlice;
 
 /**
  * Content for Page documents
@@ -361,6 +365,106 @@ type BiographySliceVariation = BiographySliceDefault;
 export type BiographySlice = prismic.SharedSlice<
   "biography",
   BiographySliceVariation
+>;
+
+/**
+ * Primary content in *Education → Primary*
+ */
+export interface EducationSliceDefaultPrimary {
+  /**
+   * Heading field in *Education → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Education → Items*
+ */
+export interface EducationSliceDefaultItem {
+  /**
+   * Institute Name field in *Education → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.items[].institute_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  institute_name: prismic.KeyTextField;
+
+  /**
+   * Institute Type field in *Education → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.items[].institute_type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  institute_type: prismic.KeyTextField;
+
+  /**
+   * Course or Degree field in *Education → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.items[].course_or_degree
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  course_or_degree: prismic.KeyTextField;
+
+  /**
+   * Duration or Time field in *Education → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.items[].duration_or_time
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  duration_or_time: prismic.KeyTextField;
+
+  /**
+   * Score field in *Education → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.items[].score
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  score: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Education Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EducationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EducationSliceDefaultPrimary>,
+  Simplify<EducationSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Education*
+ */
+type EducationSliceVariation = EducationSliceDefault;
+
+/**
+ * Education Shared Slice
+ *
+ * - **API ID**: `education`
+ * - **Description**: Education
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EducationSlice = prismic.SharedSlice<
+  "education",
+  EducationSliceVariation
 >;
 
 /**
@@ -636,6 +740,11 @@ declare module "@prismicio/client" {
       BiographySliceDefaultPrimary,
       BiographySliceVariation,
       BiographySliceDefault,
+      EducationSlice,
+      EducationSliceDefaultPrimary,
+      EducationSliceDefaultItem,
+      EducationSliceVariation,
+      EducationSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

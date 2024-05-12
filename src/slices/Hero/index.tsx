@@ -56,7 +56,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         {
           opacity: 1,
           duration: 1.25,
-          ease: "bounce.out",
+          ease: "elastic.out(1.2,0.3)",
           y: 0,
           scale: 1,
           delay: -1,

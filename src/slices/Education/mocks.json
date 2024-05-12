@@ -1,0 +1,60 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "chose",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"institute_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "television",
+							"type": "Text"
+						}
+					],
+					[
+						"institute_type",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "correct",
+							"type": "Text"
+						}
+					],
+					[
+						"course_or_degree",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "sick",
+							"type": "Text"
+						}
+					],
+					[
+						"duration_or_time",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "sure",
+							"type": "Text"
+						}
+					],
+					[
+						"score",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "available",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
