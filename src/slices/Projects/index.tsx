@@ -75,7 +75,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
           ) => {
             return (
               <div
-                className="each-project bg-slate-900 opacity-0 relative overflow-hidden my-5 py-5"
+                className="each-project bg-slate-900 opacity-0 relative overflow-hidden my-5 py-5 px-2"
                 ref={eachProjectRef}
                 key={index}
                 style={{

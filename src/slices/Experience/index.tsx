@@ -65,7 +65,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
       ref={experienceRef}
     >
       <Heading size="lg">{slice.primary.heading}</Heading>
-      <div className="grid grid-cols-1 min-[660px]:grid-cols-2 gap-2 px-2 mt-16">
+      <div className="grid grid-cols-1 min-[660px]:grid-cols-2 gap-2 px-2 mt-16 mb-8">
         {slice.items.map(({ role, company, duration, location }, index) => {
           return (
             <div
