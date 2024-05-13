@@ -80,18 +80,20 @@ const Education = ({ slice }: EducationProps): JSX.Element => {
           ) => {
             return (
               <div
-                className="eachCard flex justify-between border-2 rounded-lg my-8 py-6 px-4 border-slate-700 bg-slate-800 shadow-2xl shadow-black"
+                className="eachCard flex justify-between border-2 rounded-lg my-8 py-6 px-4 max-sm:px-1 border-slate-700 bg-slate-800 shadow-2xl shadow-black"
                 key={index + 500}
               >
                 <div className="flex flex-col">
-                  <p className="text-2xl text-slate-300">{institute_name}</p>
-                  <p className="text-slate-400">
+                  <p className="text-2xl max-sm:text-lg text-slate-300">
+                    {institute_name}
+                  </p>
+                  <p className="text-slate-400 max-sm:text-sm">
                     <em>
                       {course_or_degree} ({score})
                     </em>
                   </p>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end max-sm:text-xs">
                   <p className="text-slate-300">{institute_type}</p>
                   <p className="text-slate-400">
                     <em>{duration_or_time}</em>

@@ -51,7 +51,7 @@ const Avatar = ({ image, className }: PropsAvatar) => {
         <PrismicNextImage
           field={image}
           alt={""}
-          className="avatar-image object-fill h-[27rem] w-80"
+          className="avatar-image object-fill h-[27rem] w-80 max-sm:h-[23rem] max-sm:w-72"
         />
       </div>
     </div>

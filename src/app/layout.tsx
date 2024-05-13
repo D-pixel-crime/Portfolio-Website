@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const lexendDeca = Lexend_Deca({ weight: "400", subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={lexendDeca.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

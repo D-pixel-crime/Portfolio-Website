@@ -162,7 +162,7 @@ const Geometry = ({ r, position, geometry, materials }) => {
         z: 0,
         duration: 1,
         ease: "back",
-        delay: 0.5,
+        delay: 1,
       });
     });
     return () => context.revert();
