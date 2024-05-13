@@ -58,6 +58,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
           </div>
         </div>
         <PrismicNextImage
+          alt=""
           field={slice.primary.fallback_item_image}
           className="sm:col-start-2 max-sm:hidden rounded-xl opacity-80"
         />
@@ -75,7 +76,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
           ) => {
             return (
               <div
-                className="each-project bg-slate-900 opacity-0 relative overflow-hidden my-5 py-5 px-2"
+                className="each-project bg-slate-900 max-sm:rounded-lg opacity-0 relative overflow-hidden my-5 py-5 px-2"
                 ref={eachProjectRef}
                 key={index}
                 style={{
@@ -83,6 +84,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
                 }}
               >
                 <PrismicNextImage
+                  alt=""
                   field={project_screenshot}
                   className="absolute top-0 left-0 w-full opacity-60 h-auto z-0 blur-sm"
                 />

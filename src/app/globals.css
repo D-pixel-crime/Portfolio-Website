@@ -25,3 +25,11 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.base-layout {
+    background-image: url('/images/background2.jpg');
+}
+
+.social-links {
+    box-shadow: -4px 1px 20px black;
+}

@@ -17,7 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-slate-900 text-white">
+    <html
+      lang="en"
+      className="bg-cover bg-fixed bg-center bg-no-repeat text-white base-layout"
+    >
       <body className={lexendDeca.className}>
         <Header />
         {children}

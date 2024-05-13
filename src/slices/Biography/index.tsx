@@ -3,7 +3,6 @@ import Button from "@/components/Button";
 import CommonBounded from "@/components/CommonBounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 /**
