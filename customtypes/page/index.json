@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_me": {
+              "type": "SharedSlice"
+            },
             "experience": {
               "type": "SharedSlice"
             },

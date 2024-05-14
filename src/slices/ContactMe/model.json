@@ -1,0 +1,78 @@
+{
+  "id": "contact_me",
+  "type": "SharedSlice",
+  "name": "ContactMe",
+  "description": "ContactMe",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "message_label": {
+          "type": "Text",
+          "config": {
+            "label": "Message Label",
+            "placeholder": ""
+          }
+        },
+        "message_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Message Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "email_js_tag": {
+          "type": "Text",
+          "config": {
+            "label": "Email JS Tag",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": ""
+          }
+        },
+        "placeholder": {
+          "type": "Text",
+          "config": {
+            "label": "Placeholder",
+            "placeholder": ""
+          }
+        },
+        "type": {
+          "type": "Text",
+          "config": {
+            "label": "type",
+            "placeholder": ""
+          }
+        },
+        "email_js_tag": {
+          "type": "Text",
+          "config": {
+            "label": "Email JS Tag",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

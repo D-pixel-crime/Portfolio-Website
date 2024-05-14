@@ -1,0 +1,73 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "excitement",
+				"type": "Text"
+			},
+			"message_label": {
+				"__TYPE__": "FieldContent",
+				"value": "vertical",
+				"type": "Text"
+			},
+			"message_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim exercitation sit velit commodo laboris sunt magna deserunt tempor adipisicing laborum non ea."
+						}
+					}
+				]
+			},
+			"email_js_tag": {
+				"__TYPE__": "FieldContent",
+				"value": "first",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "sense",
+							"type": "Text"
+						}
+					],
+					[
+						"placeholder",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "never",
+							"type": "Text"
+						}
+					],
+					[
+						"type",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "replace",
+							"type": "Text"
+						}
+					],
+					[
+						"email_js_tag",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "jump",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

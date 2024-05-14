@@ -313,6 +313,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContactMeSlice
   | ExperienceSlice
   | EducationSlice
   | ProjectsSlice
@@ -467,6 +468,126 @@ type BiographySliceVariation = BiographySliceDefault;
 export type BiographySlice = prismic.SharedSlice<
   "biography",
   BiographySliceVariation
+>;
+
+/**
+ * Primary content in *ContactMe → Primary*
+ */
+export interface ContactMeSliceDefaultPrimary {
+  /**
+   * Heading field in *ContactMe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Message Label field in *ContactMe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.primary.message_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  message_label: prismic.KeyTextField;
+
+  /**
+   * Message Description field in *ContactMe → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.primary.message_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  message_description: prismic.RichTextField;
+
+  /**
+   * Email JS Tag field in *ContactMe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.primary.email_js_tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_js_tag: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ContactMe → Items*
+ */
+export interface ContactMeSliceDefaultItem {
+  /**
+   * Label field in *ContactMe → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Placeholder field in *ContactMe → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.items[].placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  placeholder: prismic.KeyTextField;
+
+  /**
+   * type field in *ContactMe → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.items[].type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  type: prismic.KeyTextField;
+
+  /**
+   * Email JS Tag field in *ContactMe → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.items[].email_js_tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_js_tag: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContactMe Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactMeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactMeSliceDefaultPrimary>,
+  Simplify<ContactMeSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ContactMe*
+ */
+type ContactMeSliceVariation = ContactMeSliceDefault;
+
+/**
+ * ContactMe Shared Slice
+ *
+ * - **API ID**: `contact_me`
+ * - **Description**: ContactMe
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactMeSlice = prismic.SharedSlice<
+  "contact_me",
+  ContactMeSliceVariation
 >;
 
 /**
@@ -945,6 +1066,11 @@ declare module "@prismicio/client" {
       BiographySliceDefaultPrimary,
       BiographySliceVariation,
       BiographySliceDefault,
+      ContactMeSlice,
+      ContactMeSliceDefaultPrimary,
+      ContactMeSliceDefaultItem,
+      ContactMeSliceVariation,
+      ContactMeSliceDefault,
       EducationSlice,
       EducationSliceDefaultPrimary,
       EducationSliceDefaultItem,
