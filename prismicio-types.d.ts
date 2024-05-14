@@ -495,16 +495,6 @@ export interface ContactMeSliceDefaultPrimary {
   message_label: prismic.KeyTextField;
 
   /**
-   * Message Description field in *ContactMe → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: contact_me.primary.message_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  message_description: prismic.RichTextField;
-
-  /**
    * Email JS Tag field in *ContactMe → Primary*
    *
    * - **Field Type**: Text
@@ -513,6 +503,16 @@ export interface ContactMeSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   email_js_tag: prismic.KeyTextField;
+
+  /**
+   * Message Description field in *ContactMe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_me.primary.message_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  message_description: prismic.KeyTextField;
 }
 
 /**

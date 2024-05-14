@@ -13,20 +13,14 @@
 				"value": "vertical",
 				"type": "Text"
 			},
-			"message_description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Enim exercitation sit velit commodo laboris sunt magna deserunt tempor adipisicing laborum non ea."
-						}
-					}
-				]
-			},
 			"email_js_tag": {
 				"__TYPE__": "FieldContent",
 				"value": "first",
+				"type": "Text"
+			},
+			"message_description": {
+				"__TYPE__": "FieldContent",
+				"value": "balance",
 				"type": "Text"
 			}
 		},

@@ -26,19 +26,17 @@
             "placeholder": ""
           }
         },
-        "message_description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Message Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
         "email_js_tag": {
           "type": "Text",
           "config": {
             "label": "Email JS Tag",
+            "placeholder": ""
+          }
+        },
+        "message_description": {
+          "type": "Text",
+          "config": {
+            "label": "Message Description",
             "placeholder": ""
           }
         }
