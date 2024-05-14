@@ -5,6 +5,8 @@ import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 /**
  * Props for `ContactMe`.
@@ -21,18 +23,50 @@ const ContactMe = ({ slice }: ContactMeProps): JSX.Element => {
     email: "",
     message: "",
   });
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-  };
+  const [isSent, setIsSent] = useState(false);
 
   return (
     <CommonBounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="overflow-hidden"
     >
       <Heading size="lg">{slice.primary.heading}</Heading>
+      <div
+        className={`fixed flex gap-2 items-center px-3 py-4 bg-slate-800 rounded-l-lg top-36 right-0 ${isSent ? "translate-x-0" : "translate-x-[100%]"}`}
+        style={{ boxShadow: "-2px 1px 20px 0px black", transition: "all 1s" }}
+      >
+        <span>
+          <Icon icon={"mdi:progress-tick"} className="size-8 text-green-600" />
+        </span>
+        <span>Message Sent Successfully</span>
+      </div>
       <form
+        onSubmit={async (e) => {
+          e.preventDefault();
+
+          if (!formData.name || !formData.email || !formData.message)
+            return alert("Please fill all the fields");
+
+          try {
+            const res = await emailjs.sendForm(
+              process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+              process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+              formRef.current!,
+              { publicKey: process.env.NEXT_PUBLIC_EMAILJS_API_KEY! }
+            );
+            setFormData({ name: "", email: "", message: "" });
+            setIsSent(true);
+
+            setTimeout(() => {
+              setIsSent(false);
+            }, 5000);
+
+            console.log(res);
+          } catch (error) {
+            console.error(error);
+          }
+        }}
         ref={formRef}
         className="flex flex-col gap-4 sm:mx-7 mt-14 mb-4 px-2"
       >

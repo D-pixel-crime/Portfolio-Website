@@ -516,51 +516,6 @@ export interface ContactMeSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *ContactMe → Items*
- */
-export interface ContactMeSliceDefaultItem {
-  /**
-   * Label field in *ContactMe → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: contact_me.items[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Placeholder field in *ContactMe → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: contact_me.items[].placeholder
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  placeholder: prismic.KeyTextField;
-
-  /**
-   * type field in *ContactMe → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: contact_me.items[].type
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  type: prismic.KeyTextField;
-
-  /**
-   * Email JS Tag field in *ContactMe → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: contact_me.items[].email_js_tag
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  email_js_tag: prismic.KeyTextField;
-}
-
-/**
  * Default variation for ContactMe Slice
  *
  * - **API ID**: `default`
@@ -570,7 +525,7 @@ export interface ContactMeSliceDefaultItem {
 export type ContactMeSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<ContactMeSliceDefaultPrimary>,
-  Simplify<ContactMeSliceDefaultItem>
+  never
 >;
 
 /**
@@ -1068,7 +1023,6 @@ declare module "@prismicio/client" {
       BiographySliceDefault,
       ContactMeSlice,
       ContactMeSliceDefaultPrimary,
-      ContactMeSliceDefaultItem,
       ContactMeSliceVariation,
       ContactMeSliceDefault,
       EducationSlice,

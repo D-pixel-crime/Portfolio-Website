@@ -41,36 +41,7 @@
           }
         }
       },
-      "items": {
-        "label": {
-          "type": "Text",
-          "config": {
-            "label": "Label",
-            "placeholder": ""
-          }
-        },
-        "placeholder": {
-          "type": "Text",
-          "config": {
-            "label": "Placeholder",
-            "placeholder": ""
-          }
-        },
-        "type": {
-          "type": "Text",
-          "config": {
-            "label": "type",
-            "placeholder": ""
-          }
-        },
-        "email_js_tag": {
-          "type": "Text",
-          "config": {
-            "label": "Email JS Tag",
-            "placeholder": ""
-          }
-        }
-      }
+      "items": {}
     }
   ]
 }
