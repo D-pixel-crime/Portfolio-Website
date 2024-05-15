@@ -30,6 +30,9 @@
     background-image: url('/images/background2.jpg');
 }
 
-.social-links {
-    box-shadow: -4px 1px 20px black;
+@media screen and (min-width: 641px) {
+    .social-links {
+        box-shadow: -4px 1px 20px black;
+    }
+
 }

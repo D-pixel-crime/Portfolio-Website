@@ -5,6 +5,8 @@ import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileNavbar from "./MobileNavbar";
+import { useState } from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const NavBar = ({
   commonSettings,
@@ -12,12 +14,13 @@ const NavBar = ({
   commonSettings: Content.CommonSettingsDocument;
 }) => {
   const pathName = usePathname();
+  const [openSidebar, setOpenSidebar] = useState(false);
 
   return (
     <>
-      <header className="top-0 z-50 mx-auto max-w-7xl md:sticky text-xl border-b-2 border-slate-700 py-7 bg-slate-800 shadow-2xl shadow-black">
+      <header className="top-0 z-50 mx-auto max-w-7xl sticky text-xl border-b-2 border-slate-700 py-7 bg-slate-800 shadow-2xl shadow-black">
         <nav className="mx-5">
-          <ul className="flex justify-between">
+          <ul className="flex items-center justify-between">
             <li
               className={`${pathName === "/" ? "border-b-4 border-violet-500" : "hover:scale-105 transition hover:text-violet-400"}`}
             >
@@ -25,7 +28,7 @@ const NavBar = ({
                 {commonSettings.data.name}
               </Link>
             </li>
-            <div className="flex gap-5">
+            <div className="flex gap-5 max-sm:hidden">
               {commonSettings.data.nav_item.map(({ label, link }, index) => (
                 <li
                   key={index}
@@ -40,10 +43,20 @@ const NavBar = ({
                 </li>
               ))}
             </div>
+            <li className="list-none sm:hidden">
+              <Icon
+                icon="pajamas:hamburger"
+                onClick={() => setOpenSidebar(true)}
+              />
+            </li>
           </ul>
         </nav>
       </header>
-      <MobileNavbar />
+      <MobileNavbar
+        openSidebar={openSidebar}
+        setOpenSidebar={setOpenSidebar}
+        commonSettings={commonSettings}
+      />
     </>
   );
 };

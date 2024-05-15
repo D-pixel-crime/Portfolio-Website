@@ -33,7 +33,7 @@ const ContactMe = ({ slice }: ContactMeProps): JSX.Element => {
     >
       <Heading size="lg">{slice.primary.heading}</Heading>
       <div
-        className={`fixed flex gap-2 items-center px-3 py-4 bg-slate-800 rounded-l-lg top-36 right-0 ${isSent ? "translate-x-0" : "translate-x-[100%]"}`}
+        className={`fixed flex gap-2 items-center px-3 py-4 bg-slate-800 rounded-l-lg top-36 right-0 ${isSent ? "translate-x-0" : "translate-x-[110%]"}`}
         style={{ boxShadow: "-2px 1px 20px 0px black", transition: "all 1s" }}
       >
         <span>
@@ -123,9 +123,8 @@ const ContactMe = ({ slice }: ContactMeProps): JSX.Element => {
         <div className="flex items-center justify-end">
           <button
             type="submit"
-            className="bg-white flex-center py-1.5 px-2.5 group relative w-fit overflow-hidden text-lg rounded-lg text-black"
+            className="bg-transparent flex-center py-1.5 px-2.5 w-fit overflow-hidden text-lg rounded-lg text-green-400 border-2 border-green-400 hover:bg-green-400 hover:text-black"
           >
-            <span className="absolute inset-0 z-0 h-full translate-x-[-90%] translate-y-[80%] transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"></span>
             <span>Send</span>
           </button>
         </div>

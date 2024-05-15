@@ -6,11 +6,9 @@ import { PrismicNextLink } from "@prismicio/next";
 import { useState } from "react";
 
 const SocialLinks = ({ footer }: { footer: Content.FooterDocument }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <footer
-      className={`sm:fixed social-links sm:right-0 sm:top-[50%] sm:translate-y-[-50%] z-50 sm:px-3 sm:rounded-l-xl block py-4 max-sm:py-7 max-sm:border-t-2 border-slate-700 bg-slate-800 max-sm:bottom-0`}
+      className={`sm:fixed social-links sm:right-0 sm:top-[50%] sm:translate-y-[-50%] z-50 sm:px-3 sm:rounded-l-xl block py-4 max-sm:py-7 max-sm:border-t-2 border-slate-700 sm:bg-slate-800 max-sm:bottom-0`}
     >
       <div>
         <ul className="flex gap-4 sm:flex-col justify-evenly items-center">
