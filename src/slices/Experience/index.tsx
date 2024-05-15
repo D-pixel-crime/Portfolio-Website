@@ -26,7 +26,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: experienceRef.current,
-          start: "top center",
+          start: "top bottom",
           end: "bottom bottom",
           scrub: 1,
         },
