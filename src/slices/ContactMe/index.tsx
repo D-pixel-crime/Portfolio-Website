@@ -4,9 +4,10 @@ import CommonBounded from "@/components/CommonBounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { gsap } from "gsap";
 
 /**
  * Props for `ContactMe`.
@@ -24,6 +25,27 @@ const ContactMe = ({ slice }: ContactMeProps): JSX.Element => {
     message: "",
   });
   const [isSent, setIsSent] = useState(false);
+
+  useEffect(() => {
+    gsap.utils.toArray(".each-div").forEach((div: any, index) => {
+      gsap.timeline().fromTo(
+        div,
+        {
+          opacity: 0,
+          scale: 0.8,
+          y: 100,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          ease: "power3.inOut",
+          duration: 1.5,
+        },
+        index * 0.1
+      );
+    });
+  }, []);
 
   return (
     <CommonBounded
@@ -70,7 +92,7 @@ const ContactMe = ({ slice }: ContactMeProps): JSX.Element => {
         ref={formRef}
         className="flex flex-col gap-4 sm:mx-7 mt-14 mb-4 px-2"
       >
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 each-div">
           <label htmlFor="user_name" className="sm:text-xl">
             Name
           </label>
@@ -85,7 +107,7 @@ const ContactMe = ({ slice }: ContactMeProps): JSX.Element => {
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 each-div">
           <label htmlFor="user_email" className="sm:text-xl">
             Email
           </label>
@@ -103,7 +125,7 @@ const ContactMe = ({ slice }: ContactMeProps): JSX.Element => {
           />
         </div>
 
-        <div className="flex flex-col my-4 gap-1">
+        <div className="flex flex-col my-4 gap-1 each-div">
           <label htmlFor={slice.primary.email_js_tag!} className="sm:text-xl">
             {slice.primary.message_label}
           </label>
