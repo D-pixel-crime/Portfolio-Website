@@ -31,7 +31,7 @@
 }
 
 
-@media screen-only and (max-width: 641px) {
+@media screen and (min-width: 641px) {
 
     .social-links {
         box-shadow: -4px 1px 20px black;
